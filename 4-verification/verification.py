@@ -212,7 +212,6 @@ def generate_comparison_table(all_results):
 
 if __name__ == "__main__":
     print("\n" + "#"*60)
-    print("# COMMIT 4: PROPERTY VERIFICATION")
     print("#"*60)
     print("\nVerifying mutual exclusion and deadlock for each protocol...\n")
     
@@ -232,4 +231,3 @@ if __name__ == "__main__":
     print("  + Mutual exclusion checked for all states")
     print("  + Deadlock freedom verified")
     print("  + Results match expected behavior")
-    print("\nReady for next commit: Counter-example traces")

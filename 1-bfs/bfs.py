@@ -264,7 +264,6 @@ def test_disconnected_nodes():
 def run_all_tests():
     """Run all BFS tests"""
     print("\n" + "#" * 70)
-    print("# COMMIT 1: BFS IMPLEMENTATION VERIFICATION")
     print("# Question 1: Assurez vous que votre implementation BFS fonctionne")
     print("#" * 70)
     print()

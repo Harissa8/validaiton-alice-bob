@@ -1,6 +1,6 @@
 """
 This module implements the Tower of Hanoi puzzle using the BFS
-algorithm from Commit 1 to find optimal solutions.
+algorithm from bfs to find optimal solutions.
 """
 
 import sys
@@ -334,7 +334,6 @@ def test_hanoi_state_growth():
 def run_all_tests():
     """Run all Hanoi tests"""
     print("\n" + "#"*70)
-    print("# COMMIT 2: HANOI GAME IMPLEMENTATION")
     print("# Question 2: Assurez vous que votre implementation Hanoi fonctionne")
     print("#"*70)
     print()

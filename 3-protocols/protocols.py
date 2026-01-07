@@ -279,7 +279,6 @@ def test_protocol_encoding(protocol):
 
 if __name__ == "__main__":
     print("\n" + "#"*60)
-    print("# COMMIT 3: PROTOCOL ENCODING WITH ROOTED GRAPH")
     print("#"*60)
     print("\nEncoding AB1, AB2, AB3 using RootedGraph abstraction...\n")
     
@@ -311,4 +310,3 @@ if __name__ == "__main__":
     print("  - Root node = Initial state (A:I, B:I, fA:DOWN, fB:DOWN)")
     print("  - Nodes = System states")
     print("  - Edges = State transitions")
-    print("\nReady for next commit: Property verification")

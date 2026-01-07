@@ -208,7 +208,6 @@ def demonstrate_bfs_unchanged():
 
 if __name__ == "__main__":
     print("\n" + "#"*60)
-    print("# COMMIT 5: COUNTER-EXAMPLE TRACE GENERATION")
     print("#"*60)
     print("\nGenerating counter-example traces WITHOUT modifying BFS...\n")
     
