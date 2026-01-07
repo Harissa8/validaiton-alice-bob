@@ -1,7 +1,4 @@
 """
-COMMIT 1: BFS Implementation
-Question 1: Assurez vous que votre implementation BFS fonctionne
-
 This module implements a generic Breadth-First Search algorithm
 that can be used for state space exploration.
 """

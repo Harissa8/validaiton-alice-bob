@@ -1,7 +1,4 @@
 """
-COMMIT 2: Hanoi Game Implementation
-Question 2: Assurez vous que votre implementation Hanoi fonctionne
-
 This module implements the Tower of Hanoi puzzle using the BFS
 algorithm from Commit 1 to find optimal solutions.
 """
