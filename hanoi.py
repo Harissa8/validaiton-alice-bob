@@ -330,7 +330,7 @@ def test_hanoi_state_growth():
     
     assert all_correct, "All test cases should match expected values"
     
-    print("\n✓ Growth patterns verified!\n")
+    print("\nGrowth patterns verified!\n")
     return True
 
 
@@ -355,7 +355,7 @@ def run_all_tests():
             result = test_func()
             results.append((test_name, result))
         except Exception as e:
-            print(f"✗ {test_name} failed: {e}\n")
+            print(f"{test_name} failed: {e}\n")
             results.append((test_name, False))
     
     # Print summary
@@ -366,7 +366,7 @@ def run_all_tests():
     total = len(results)
     
     for test_name, result in results:
-        status = "✓ PASS" if result else "✗ FAIL"
+        status = "✓ PASS" if result else "FAIL"
         print(f"{status}: {test_name}")
     
     print("="*70)
@@ -374,16 +374,16 @@ def run_all_tests():
     print("="*70)
     
     if passed == total:
-        print("\n🎉 ALL HANOI TESTS PASSED! 🎉")
+        print("\n ALL HANOI TESTS PASSED! ")
         print("\nHanoi Implementation Summary:")
-        print("  ✓ State representation correct")
+        print("  + State representation correct")
         print("  ✓ Move validation working")
         print("  ✓ BFS finds optimal solutions")
         print("  ✓ State space matches 3^n formula")
         print("  ✓ Solution length matches 2^n-1 formula")
         print("  ✓ Ready for protocol implementation!")
     else:
-        print(f"\n⚠️ {total - passed} test(s) failed")
+        print(f"\n {total - passed} test(s) failed")
     
     print()
     return passed == total

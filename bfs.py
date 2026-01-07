@@ -206,18 +206,18 @@ def test_complex_graph():
     
     # Test shortest path
     path_to_g = bfs.get_path('A', 'G')
-    print(f"\nShortest path A → G: {path_to_g}")
+    print(f"\nShortest path A -> G: {path_to_g}")
     print(f"Path length: {len(path_to_g) - 1} steps")
     
     # Test multiple paths exist but BFS finds shortest
     path_to_d = bfs.get_path('A', 'D')
     path_to_f = bfs.get_path('A', 'F')
-    print(f"Path A → D: {path_to_d}")
-    print(f"Path A → F: {path_to_f}")
+    print(f"Path A -> D: {path_to_d}")
+    print(f"Path A -> F: {path_to_f}")
     
     # Verify correctness
     assert stats['total_states'] == 7, "Should visit 7 states"
-    assert len(path_to_g) == 4, "Shortest path A→G should be 4 nodes (A→B→D→G)"
+    assert len(path_to_g) == 4, "Shortest path A->G should be 4 nodes (A->B->D->G)"
     
     print("\n✓ Test passed!\n")
     return True
@@ -304,7 +304,7 @@ def run_all_tests():
     print("=" * 70)
     
     if passed == total:
-        print("\n🎉 ALL BFS TESTS PASSED! 🎉")
+        print("\n ALL BFS TESTS PASSED! ")
         print("\nBFS Implementation Summary:")
         print("  ✓ Explores state space correctly")
         print("  ✓ Handles cycles properly")
@@ -312,7 +312,7 @@ def run_all_tests():
         print("  ✓ Handles disconnected components")
         print("  ✓ Ready to use for Hanoi and Protocols!")
     else:
-        print(f"\n⚠️ {total - passed} test(s) failed")
+        print(f"\n {total - passed} test(s) failed")
     
     print()
     return passed == total
