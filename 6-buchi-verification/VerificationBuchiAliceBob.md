@@ -24,185 +24,123 @@ python verify_buchi.py
 ### AB1 x P1 - Exclusion (never A.CS & B.CS)
 ```
 Prefix trace:
-  0: ('I', 'I') [buchi=1]
-  1: ('CS', 'I') [buchi=1]
-  2: ('CS', 'CS') [buchi=0]
-  3: ('I', 'CS') [buchi=0]
-  4: ('I', 'I') [buchi=0]
-  5: ('CS', 'I') [buchi=0]
+  0: ('I', 'I') [prop=1]
+  1: ('CS', 'I') [prop=1]
+  2: ('CS', 'CS') [prop=0]
 Cyclic suffix trace:
-  0: ('CS', 'I') [buchi=0]
-  1: ('I', 'I') [buchi=0]
-  2: ('CS', 'I') [buchi=0] (loop)
+  0: ('CS', 'CS') [prop=0]
+  1: ('I', 'CS') [prop=0]
+  2: ('CS', 'CS') [prop=0] (loop)
 ```
 
 ### AB2 x P2 - No deadlock
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=1]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=1]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=1]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=1]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=1]
-  5: ('W', 'W', 'UP', 'UP') [buchi=1]
-  6: ('W', 'W', 'UP', 'UP') [buchi=0]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=1]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=1]
+  2: ('W', 'W', 'UP', 'UP') [prop=0]
 Cyclic suffix trace:
-  0: ('W', 'W', 'UP', 'UP') [buchi=0]
-  1: ('W', 'W', 'UP', 'UP') [buchi=0] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=0]
+  1: ('W', 'W', 'UP', 'UP') [prop=0] (loop)
 ```
 
 ### AB2 x P3 - At least one in CS (liveness)
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=x]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=x]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=x]
-  3: ('I', 'I', 'DOWN', 'DOWN') [buchi=y]
-  4: ('W', 'I', 'UP', 'DOWN') [buchi=y]
-  5: ('W', 'W', 'UP', 'UP') [buchi=y]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=x]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=x]
+  2: ('W', 'W', 'UP', 'UP') [prop=y]
 Cyclic suffix trace:
-  0: ('W', 'W', 'UP', 'UP') [buchi=y]
-  1: ('W', 'W', 'UP', 'UP') [buchi=y] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=y]
+  1: ('W', 'W', 'UP', 'UP') [prop=y] (loop)
 ```
 
 ### AB2 x P4 - If one wants in, it gets in
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=0]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=0]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=0]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=0]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=0]
-  5: ('W', 'W', 'UP', 'UP') [buchi=0]
-  6: ('W', 'W', 'UP', 'UP') [buchi=1]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=0]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=0]
+  2: ('W', 'W', 'UP', 'UP') [prop=1]
 Cyclic suffix trace:
-  0: ('W', 'W', 'UP', 'UP') [buchi=1]
-  1: ('W', 'W', 'UP', 'UP') [buchi=1] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=1]
+  1: ('W', 'W', 'UP', 'UP') [prop=1] (loop)
 ```
 
 ### AB2 x P5 - Uncontested progress
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=0]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=0]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=0]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=0]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=0]
-  5: ('I', 'CS', 'DOWN', 'UP') [buchi=0]
-  6: ('W', 'CS', 'UP', 'UP') [buchi=0]
-  7: ('W', 'I', 'UP', 'DOWN') [buchi=1]
-  8: ('W', 'W', 'UP', 'UP') [buchi=1]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=0]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=1]
+  2: ('W', 'W', 'UP', 'UP') [prop=1]
 Cyclic suffix trace:
-  0: ('W', 'W', 'UP', 'UP') [buchi=1]
-  1: ('W', 'W', 'UP', 'UP') [buchi=1] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=1]
+  1: ('W', 'W', 'UP', 'UP') [prop=1] (loop)
 ```
 
 ### AB3 x P3 - At least one in CS (liveness)
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=x]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=x]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=x]
-  3: ('I', 'I', 'DOWN', 'DOWN') [buchi=y]
-  4: ('W', 'I', 'UP', 'DOWN') [buchi=y]
-  5: ('W', 'W', 'UP', 'UP') [buchi=y]
-  6: ('W', 'W', 'UP', 'DOWN') [buchi=y]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=x]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=x]
+  2: ('W', 'W', 'UP', 'UP') [prop=y]
 Cyclic suffix trace:
-  0: ('W', 'W', 'UP', 'DOWN') [buchi=y]
-  1: ('W', 'W', 'UP', 'UP') [buchi=y]
-  2: ('W', 'W', 'UP', 'DOWN') [buchi=y] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=y]
+  1: ('W', 'W', 'UP', 'DOWN') [prop=y]
+  2: ('W', 'W', 'UP', 'UP') [prop=y] (loop)
 ```
 
 ### AB3 x P4 - If one wants in, it gets in
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=0]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=0]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=0]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=0]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=0]
-  5: ('W', 'W', 'UP', 'UP') [buchi=0]
-  6: ('W', 'W', 'UP', 'DOWN') [buchi=0]
-  7: ('CS', 'W', 'UP', 'DOWN') [buchi=0]
-  8: ('I', 'W', 'DOWN', 'DOWN') [buchi=0]
-  9: ('W', 'W', 'UP', 'DOWN') [buchi=1]
-  10: ('W', 'W', 'UP', 'UP') [buchi=1]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=0]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=0]
+  2: ('W', 'W', 'UP', 'UP') [prop=1]
 Cyclic suffix trace:
-  0: ('W', 'W', 'UP', 'UP') [buchi=1]
-  1: ('W', 'W', 'UP', 'DOWN') [buchi=1]
-  2: ('W', 'W', 'UP', 'UP') [buchi=1] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=1]
+  1: ('W', 'W', 'UP', 'DOWN') [prop=1]
+  2: ('W', 'W', 'UP', 'UP') [prop=1] (loop)
 ```
 
 ### AB3 x P5 - Uncontested progress
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=0]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=0]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=0]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=0]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=0]
-  5: ('W', 'W', 'UP', 'UP') [buchi=0]
-  6: ('W', 'W', 'UP', 'DOWN') [buchi=0]
-  7: ('CS', 'W', 'UP', 'DOWN') [buchi=0]
-  8: ('I', 'W', 'DOWN', 'DOWN') [buchi=0]
-  9: ('I', 'W', 'DOWN', 'UP') [buchi=2]
-  10: ('W', 'W', 'UP', 'UP') [buchi=2]
-  11: ('W', 'W', 'UP', 'DOWN') [buchi=2]
-  12: ('CS', 'W', 'UP', 'DOWN') [buchi=2]
-  13: ('I', 'W', 'DOWN', 'DOWN') [buchi=2]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=0]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=1]
+  2: ('W', 'W', 'UP', 'UP') [prop=1]
 Cyclic suffix trace:
-  0: ('I', 'W', 'DOWN', 'DOWN') [buchi=2]
-  1: ('W', 'W', 'UP', 'DOWN') [buchi=2]
-  2: ('CS', 'W', 'UP', 'DOWN') [buchi=2]
-  3: ('I', 'W', 'DOWN', 'DOWN') [buchi=2] (loop)
+  0: ('W', 'W', 'UP', 'UP') [prop=1]
+  1: ('W', 'W', 'UP', 'DOWN') [prop=1]
+  2: ('W', 'W', 'UP', 'UP') [prop=1] (loop)
 ```
 
 ### AB4 x P4 - If one wants in, it gets in
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=0]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=0]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=0]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=0]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=0]
-  5: ('W', 'W', 'UP', 'UP') [buchi=0]
-  6: ('W', 'R', 'UP', 'DOWN') [buchi=0]
-  7: ('CS', 'R', 'UP', 'DOWN') [buchi=0]
-  8: ('I', 'R', 'DOWN', 'DOWN') [buchi=0]
-  9: ('I', 'W', 'DOWN', 'UP') [buchi=2]
-  10: ('W', 'W', 'UP', 'UP') [buchi=2]
-  11: ('W', 'R', 'UP', 'DOWN') [buchi=2]
-  12: ('CS', 'R', 'UP', 'DOWN') [buchi=2]
-  13: ('I', 'R', 'DOWN', 'DOWN') [buchi=2]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=0]
+  1: ('W', 'I', 'UP', 'DOWN') [prop=0]
+  2: ('CS', 'I', 'UP', 'DOWN') [prop=0]
+  3: ('CS', 'W', 'UP', 'UP') [prop=2]
+  4: ('CS', 'R', 'UP', 'DOWN') [prop=2]
 Cyclic suffix trace:
-  0: ('I', 'R', 'DOWN', 'DOWN') [buchi=2]
-  1: ('W', 'R', 'UP', 'DOWN') [buchi=2]
-  2: ('CS', 'R', 'UP', 'DOWN') [buchi=2]
-  3: ('I', 'R', 'DOWN', 'DOWN') [buchi=2] (loop)
+  0: ('CS', 'R', 'UP', 'DOWN') [prop=2]
+  1: ('I', 'R', 'DOWN', 'DOWN') [prop=2]
+  2: ('W', 'R', 'UP', 'DOWN') [prop=2]
+  3: ('CS', 'R', 'UP', 'DOWN') [prop=2] (loop)
 ```
 
 ### AB4 x P5 - Uncontested progress
 ```
 Prefix trace:
-  0: ('I', 'I', 'DOWN', 'DOWN') [buchi=0]
-  1: ('W', 'I', 'UP', 'DOWN') [buchi=0]
-  2: ('CS', 'I', 'UP', 'DOWN') [buchi=0]
-  3: ('CS', 'W', 'UP', 'UP') [buchi=0]
-  4: ('I', 'W', 'DOWN', 'UP') [buchi=0]
-  5: ('W', 'W', 'UP', 'UP') [buchi=0]
-  6: ('W', 'R', 'UP', 'DOWN') [buchi=0]
-  7: ('CS', 'R', 'UP', 'DOWN') [buchi=0]
-  8: ('I', 'R', 'DOWN', 'DOWN') [buchi=0]
-  9: ('I', 'W', 'DOWN', 'UP') [buchi=2]
-  10: ('W', 'W', 'UP', 'UP') [buchi=2]
-  11: ('W', 'R', 'UP', 'DOWN') [buchi=2]
-  12: ('CS', 'R', 'UP', 'DOWN') [buchi=2]
-  13: ('I', 'R', 'DOWN', 'DOWN') [buchi=2]
+  0: ('I', 'I', 'DOWN', 'DOWN') [prop=0]
+  1: ('I', 'W', 'DOWN', 'UP') [prop=2]
+  2: ('W', 'W', 'UP', 'UP') [prop=2]
+  3: ('W', 'R', 'UP', 'DOWN') [prop=2]
+  4: ('CS', 'R', 'UP', 'DOWN') [prop=2]
 Cyclic suffix trace:
-  0: ('I', 'R', 'DOWN', 'DOWN') [buchi=2]
-  1: ('W', 'R', 'UP', 'DOWN') [buchi=2]
-  2: ('CS', 'R', 'UP', 'DOWN') [buchi=2]
-  3: ('I', 'R', 'DOWN', 'DOWN') [buchi=2] (loop)
+  0: ('CS', 'R', 'UP', 'DOWN') [prop=2]
+  1: ('I', 'R', 'DOWN', 'DOWN') [prop=2]
+  2: ('W', 'R', 'UP', 'DOWN') [prop=2]
+  3: ('CS', 'R', 'UP', 'DOWN') [prop=2] (loop)
 ```
 
 ## Analyse

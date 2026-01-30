@@ -12,7 +12,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "common"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "3-protocols"))
 
 from ab_models_soup import get_model
-from buchi import get_property, verify_buchi, format_counter_example
+from isoup import get_isoup_property
+from buchi import verify_buchi, format_counter_example
 
 
 MODEL_NAMES = ["AB1", "AB2", "AB3", "AB4", "AB5"]
@@ -28,9 +29,9 @@ PROPERTY_DESCRIPTIONS = {
 
 def verify_one(model_name, prop_name):
     """Verify a single (model, property) pair."""
-    ls = get_model(model_name)
-    buchi = get_property(prop_name)
-    satisfied, ce = verify_buchi(ls, buchi)
+    system_ls = get_model(model_name)          # Soup Sem
+    property_ls = get_isoup_property(prop_name) # iSoup Sem
+    satisfied, ce = verify_buchi(system_ls, property_ls)  # Composition + BFS + cycle
     return satisfied, ce
 
 
